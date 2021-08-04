@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        StorageManager().saveImage(canvasView: canvas)
+        PhotoLibraryManager().saveImage(canvasView: canvas)
     }
     
     @objc private func sliderChangeValue() {

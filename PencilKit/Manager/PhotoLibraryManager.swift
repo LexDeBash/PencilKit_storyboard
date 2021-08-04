@@ -5,10 +5,13 @@
 //  Created by Сергей Горбачёв on 04.08.2021.
 //
 
-import UIKit
 import PhotosUI
 
-class StorageManager {
+class PhotoLibraryManager {
+    
+    static let shared = PhotoLibraryManager()
+    
+    private init() {}
     
     func saveImage(canvasView: Canvas) {
         UIGraphicsBeginImageContextWithOptions(canvasView.bounds.size, false, UIScreen.main.scale)
@@ -22,9 +25,7 @@ class StorageManager {
             PHPhotoLibrary.shared().performChanges {
                 PHAssetChangeRequest.creationRequestForAsset(from: image!)
             } completionHandler: { (success, error) in
-                if success {
-                    print("Your image is saved")
-                }
+                success ? print("Your image is saved") : print(error?.localizedDescription ?? "No description error")
             }
         }
     }

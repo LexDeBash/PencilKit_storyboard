@@ -15,7 +15,7 @@
 		D840AF8626BA92A30030906A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D840AF8426BA92A30030906A /* LaunchScreen.storyboard */; };
 		D840AF8E26BA9D770030906A /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D840AF8D26BA9D770030906A /* CanvasView.swift */; };
 		D840AF9326BA9DB60030906A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = D840AF9226BA9DB60030906A /* Line.swift */; };
-		D840AF9626BA9E350030906A /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D840AF9526BA9E350030906A /* StorageManager.swift */; };
+		D840AF9626BA9E350030906A /* PhotoLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D840AF9526BA9E350030906A /* PhotoLibraryManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		D840AF8726BA92A30030906A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D840AF8D26BA9D770030906A /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		D840AF9226BA9DB60030906A /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		D840AF9526BA9E350030906A /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		D840AF9526BA9E350030906A /* PhotoLibraryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,7 @@
 		D840AF9426BA9E140030906A /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				D840AF9526BA9E350030906A /* StorageManager.swift */,
+				D840AF9526BA9E350030906A /* PhotoLibraryManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -182,7 +182,7 @@
 				D840AF7E26BA92A10030906A /* ViewController.swift in Sources */,
 				D840AF7A26BA92A10030906A /* AppDelegate.swift in Sources */,
 				D840AF8E26BA9D770030906A /* CanvasView.swift in Sources */,
-				D840AF9626BA9E350030906A /* StorageManager.swift in Sources */,
+				D840AF9626BA9E350030906A /* PhotoLibraryManager.swift in Sources */,
 				D840AF7C26BA92A10030906A /* SceneDelegate.swift in Sources */,
 				D840AF9326BA9DB60030906A /* Line.swift in Sources */,
 			);
