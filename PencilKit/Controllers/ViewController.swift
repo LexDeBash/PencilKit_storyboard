@@ -28,18 +28,20 @@ class ViewController: UIViewController {
         slider.thumbTintColor = sender.backgroundColor ?? .black
     }
 
-    @IBAction func undoButtonTapped(_ sender: Any) {
+    @IBAction func undoButtonTapped() {
         canvas.undo()
     }
     
-    @IBAction func clearButtonTapped(_ sender: Any) {
+    @IBAction func clearButtonTapped() {
         canvas.clear()
     }
     
-    @IBAction func saveButtonTapped(_ sender: Any) {
-        PhotoLibraryManager().saveImage(canvasView: canvas)
+    @IBAction func saveButtonTapped() {
+        PhotoLibraryManager.shared.saveImage(canvasView: canvas)
     }
     
+    // Если работаешь через сториборд, то почему не сделал экшин для слайдера?
+    // Это как то непоследовательно. Ты ведь все равно сделал для него аутлет, так и экшин тоже надо было
     @objc private func sliderChangeValue() {
         canvas.setStrokeWidth(width: slider.value)
     }
