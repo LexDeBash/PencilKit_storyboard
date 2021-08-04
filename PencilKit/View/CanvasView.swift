@@ -18,15 +18,15 @@ class Canvas: UIView {
         
         guard let context = UIGraphicsGetCurrentContext() else { return }
 
-        lines.forEach { (line) in
+        lines.forEach { line in
             context.setStrokeColor(line.color.cgColor)
             context.setLineWidth(CGFloat(line.strokeWidth))
             context.setLineCap(.round)
-            for (i, p) in line.points.enumerated() {
-                if i == 0 {
-                    context.move(to: p)
+            for (index, point) in line.points.enumerated() {
+                if index == 0 {
+                    context.move(to: point)
                 } else {
-                    context.addLine(to: p)
+                    context.addLine(to: point)
                 }
             }
             context.strokePath()
@@ -34,31 +34,30 @@ class Canvas: UIView {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         guard let point = touches.first?.location(in: nil) else { return }
-
         guard var lastLine = lines.popLast() else { return }
-        lastLine.points.append(point)
         
+        lastLine.points.append(point)
         lines.append(lastLine)
  
         setNeedsDisplay()
     }
     
     func setStrokeWidth(width: Float) {
-        self.strokeWidth = width
+        strokeWidth = width
     }
     
     func setStrokeColor(color: UIColor) {
-        self.strokeColor = color
+        strokeColor = color
     }
     
     func undo() {
-        _ = lines.popLast()
+        _ = lines.popLast() // Тут точно так должно быть? Я просто не в курсе. На сколько я понимаю тут ты отменяешь последнее действие да?
         setNeedsDisplay()
     }
     
